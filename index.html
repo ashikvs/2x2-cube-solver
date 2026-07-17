@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2×2 Rubik's Cube Solver</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>2×2 Cube Solver</h1>
+      <p class="subtitle">
+        The Down face is solved (White). Enter the colors of the other five
+        faces, then press <strong>Solve</strong>.
+      </p>
+    </header>
+
+    <section class="panel">
+      <h2 class="panel-title">1 · Enter your cube</h2>
+      <p class="hint">Click a sticker to cycle its color.</p>
+      <div id="net" class="net" aria-label="Cube net"></div>
+
+      <div class="legend">
+        <span class="legend-item"><i class="swatch" style="background:#f5f5f5"></i>White</span>
+        <span class="legend-item"><i class="swatch" style="background:#ffd500"></i>Yellow</span>
+        <span class="legend-item"><i class="swatch" style="background:#c41e3a"></i>Red</span>
+        <span class="legend-item"><i class="swatch" style="background:#ff8c1a"></i>Orange</span>
+        <span class="legend-item"><i class="swatch" style="background:#0051ba"></i>Blue</span>
+        <span class="legend-item"><i class="swatch" style="background:#009b48"></i>Green</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">2 · Solve</h2>
+      <div class="controls">
+        <button id="solve" class="btn btn-primary" type="button">Solve</button>
+        <button id="reset" class="btn" type="button">Reset</button>
+        <button id="copy" class="btn" type="button">Copy Solution</button>
+        <label class="debug-switch">
+          <input id="debug-toggle" type="checkbox" /> Debug
+        </label>
+      </div>
+
+      <p id="status" class="status status-info">Loading…</p>
+      <div id="solution" class="solution"></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">3 · Practice (guided)</h2>
+      <p class="hint">
+        Map your cube's colors above, then step through the solution one move at
+        a time. Do each move on your cube, then press “Next Move”. The net
+        updates so you can check you're on track.
+      </p>
+      <div class="controls">
+        <button id="start-guide" class="btn btn-primary" type="button">Guide Me Step-by-Step</button>
+      </div>
+      <div id="guide" class="guide" hidden>
+        <p id="guide-progress" class="guide-progress"></p>
+        <div id="guide-step" class="guide-step"></div>
+        <div class="controls guide-controls">
+          <button id="guide-prev" class="btn" type="button">Back</button>
+          <button id="guide-next" class="btn btn-primary" type="button">Next Move</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="debug-panel" class="panel" hidden>
+      <h2 class="panel-title">Debug</h2>
+      <pre id="debug" class="debug"></pre>
+    </section>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

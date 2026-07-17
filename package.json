@@ -1,0 +1,14 @@
+{
+  "name": "rubiks-2x2-solver",
+  "version": "1.0.0",
+  "description": "A production-quality, offline 2x2 Rubik's Cube solver built with vanilla JavaScript, HTML and CSS. No frameworks, no dependencies.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate": "node js/generator/generate.js",
+    "start": "node serve.mjs",
+    "test": "node test/engine.test.mjs && node test/sticker.test.mjs && node test/solver.test.mjs && node test/downsolved.test.mjs"
+  },
+  "author": "Senior JS Architecture Team",
+  "license": "MIT"
+}
